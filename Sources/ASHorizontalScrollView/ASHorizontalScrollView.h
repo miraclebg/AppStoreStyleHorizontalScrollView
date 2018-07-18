@@ -35,7 +35,7 @@
 @property (nonatomic)CGSize uniformItemSize;
 
 /// store the current items' margin
-@property (nonatomic, readonly)int itemsMargin;
+@property (nonatomic)int itemsMargin;
 
 /// the margin between left border and first item
 @property (nonatomic)float leftMarginPx;
