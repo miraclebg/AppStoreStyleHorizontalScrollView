@@ -122,7 +122,9 @@
 
 - (void)setItemsMarginOnce
 {
-    _itemsMargin = [self calculateMarginBetweenItems];
+    if (!_itemsMargin) {
+        _itemsMargin = [self calculateMarginBetweenItems];
+    }
 }
 
 #pragma mark - remove item
