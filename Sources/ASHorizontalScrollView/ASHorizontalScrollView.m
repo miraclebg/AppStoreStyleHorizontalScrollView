@@ -90,6 +90,10 @@
 #pragma mark - add item
 - (void)addItem:(UIView*)item
 {
+    if (itemY < 0) {
+        itemY = 0;
+    }
+    
     //setup new item size and origin
     if (self.items.count>0) {
         CGRect lastItemRect = ((UIView*)self.items.lastObject).frame;
@@ -173,7 +177,7 @@
     [self setItemsMarginOnce];
     float itemX = self.leftMarginPx;
     for (UIView *item in self.items) {
-        item.frame = CGRectMake(itemX, item.frame.origin.y, item.frame.size.width, item.frame.size.height);
+        item.frame = CGRectMake(itemX, item.frame.origin.y, self.uniformItemSize.width, self.uniformItemSize.height);
         itemX += item.frame.size.width + self.itemsMargin;
     }
     itemX = itemX - self.itemsMargin + self.leftMarginPx;
