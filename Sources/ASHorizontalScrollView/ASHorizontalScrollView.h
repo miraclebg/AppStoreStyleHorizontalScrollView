@@ -91,4 +91,6 @@
  - seealso: calculateMarginBetweenItems
  */
 - (void) setItemsMarginOnce;
+- (void) refreshSubView;
+
 @end
