@@ -20,6 +20,12 @@
 
 #import "ASHorizontalScrollView.h"
 
+@interface ASHorizontalScrollView()
+
+@property (nonatomic, assign) BOOL itemsMarginSetOnce;
+
+@end
+
 @implementation ASHorizontalScrollView
 
 #define kDefaultLeftMargin 5.0f;
@@ -126,7 +132,8 @@
 
 - (void)setItemsMarginOnce
 {
-    if (!_itemsMargin) {
+    if (!_itemsMarginSetOnce) {
+        _itemsMarginSetOnce = YES;
         _itemsMargin = [self calculateMarginBetweenItems];
     }
 }
